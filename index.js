@@ -17,12 +17,12 @@ const {
 } = require('discord.js');
 
 // ====== CONFIG ======
-const TOKEN = process.env.DISCORD_TOKEN;        // set this in your environment
-const CLIENT_ID = process.env.CLIENT_ID;         // your bot's application/client ID
-const GUILD_ID = process.env.GUILD_ID;           // your server ID
-const STAFF_ROLE_ID = process.env.STAFF_ROLE_ID; // role allowed to review applications
-const MEMBER_ROLE_ID = process.env.MEMBER_ROLE_ID; // role granted on approval
-const APPLICATIONS_CATEGORY_ID = process.env.APPLICATIONS_CATEGORY_ID; // category for ticket channels (optional)
+const TOKEN = "PASTE_NEW_TOKEN_HERE";                  // your bot token from the Dev Portal
+const CLIENT_ID = "1521410737271209985";               // your bot's application/client ID
+const GUILD_ID = "1512654910594875452";                // your server ID
+const STAFF_ROLE_ID = "151433765198";                  // role allowed to review applications
+const MEMBER_ROLE_ID = "151265901793";                 // role granted on approval
+const APPLICATIONS_CATEGORY_ID = "1521416458108670042"; // category for ticket channels (optional)
 // =====================
 
 const client = new Client({
@@ -223,3 +223,4 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(TOKEN);
+

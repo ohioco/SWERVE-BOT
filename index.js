@@ -47,7 +47,7 @@ client.once('clientReady', async () => {
 client.on('interactionCreate', async (interaction) => {
   try {
     // /setup-tickets -> posts the panel as a plain bot message
-    if (interaction.isChatInputCommand() && interaction.commandName === 'setup-tickets') {
+    if (interaction.isChatInputCommand() && interaction.commandName === 'setup-apps') {
       const embed = new EmbedBuilder()
         .setTitle('SWERVE Application')
         .setDescription('Click the button below to open a Application.')

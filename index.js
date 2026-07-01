@@ -99,11 +99,7 @@ client.on('interactionCreate', async (interaction) => {
 
       const embed = new EmbedBuilder()
         .setTitle('Ticket Opened')
-        .setDescription(`Hey <@${interaction.user.id}>, staff will be with you shortly. Format: ```
-Roblox Username: 
-Discord ID:
-Clips Of You Swimming:
-```.`)
+        .setDescription(`Hey <@${interaction.user.id}>, staff will be with you shortly.\n\`\`\`\nRoblox Username: \nDiscord ID:\nClips Of You Drifting:\n\`\`\``)
         .setColor(0x57f287);
 
       const closeRow = new ActionRowBuilder().addComponents(

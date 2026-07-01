@@ -28,8 +28,8 @@ const client = new Client({
 
 const commands = [
   new SlashCommandBuilder()
-    .setName('setup-tickets')
-    .setDescription('Post the ticket panel in this channel')
+    .setName('setup-apps')
+    .setDescription('Post the application panel in this channel')
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
 ].map((c) => c.toJSON());
 
@@ -49,8 +49,8 @@ client.on('interactionCreate', async (interaction) => {
     // /setup-tickets -> posts the panel as a plain bot message
     if (interaction.isChatInputCommand() && interaction.commandName === 'setup-tickets') {
       const embed = new EmbedBuilder()
-        .setTitle('SWERVE Support')
-        .setDescription('Need help? Click the button below to open a ticket.')
+        .setTitle('SWERVE Application')
+        .setDescription('Click the button below to open a Application.')
         .setColor(0x2b2d31);
 
       const row = new ActionRowBuilder().addComponents(
@@ -58,7 +58,7 @@ client.on('interactionCreate', async (interaction) => {
           .setCustomId('open_ticket')
           .setLabel('Open Ticket')
           .setStyle(ButtonStyle.Primary)
-          .setEmoji('🎫')
+          .setEmoji('📄')
       );
 
       await interaction.channel.send({ embeds: [embed], components: [row] });
@@ -99,7 +99,11 @@ client.on('interactionCreate', async (interaction) => {
 
       const embed = new EmbedBuilder()
         .setTitle('Ticket Opened')
-        .setDescription(`Hey <@${interaction.user.id}>, staff will be with you shortly. Describe your issue below.`)
+        .setDescription(`Hey <@${interaction.user.id}>, staff will be with you shortly. Format: ```
+Roblox Username: 
+Discord ID:
+Clips Of You Swimming:
+```.`)
         .setColor(0x57f287);
 
       const closeRow = new ActionRowBuilder().addComponents(
